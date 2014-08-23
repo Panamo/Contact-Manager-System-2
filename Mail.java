@@ -6,4 +6,9 @@ public class Mail extends MainClass{
 		setLabel("");
 		setString("");
 	}
+	
+	public Mail(String label, String mail) {
+		setLabel(label);
+		setString(mail);
+	}
 }
