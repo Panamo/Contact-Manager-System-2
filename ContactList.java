@@ -2,15 +2,13 @@ package contactList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactList {
 
-	static ArrayList<Contact> contact;
+	ArrayList<Contact> contact;
 	File file;
 	ArrayList<String> lineStringArr;
 
@@ -26,7 +24,7 @@ public class ContactList {
 	void addToContact(Contact contact) {
 		this.contact.add(contact);
 	}
-	
+
 	void readeFile() {
 
 		try {
@@ -37,57 +35,75 @@ public class ContactList {
 				lineStringArr.add(read.nextLine());
 			for (int i = 0; i < lineStringArr.size(); i++) {
 				if (lineStringArr.get(i).equals("{")) {
+					System.out.println(i);
 					i = setContactLines(i);
+					System.out.println(i);
 				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private int setContactLines(int n) {
 
 		ArrayList<String> contactString = new ArrayList<>();
-		
-		for (int i = n; i < lineStringArr.size(); i++) {
-			if (!lineStringArr.get(i).equals("}"))
+		int i;
+		for (i = n + 1; i < lineStringArr.size(); i++) {
+			if (!lineStringArr.get(i).equals("}")) {
 				contactString.add(lineStringArr.get(i));
-			else
+			}
+			if (lineStringArr.get(i).equals("}")) {
 				addToContacts(contactString);
-				return i + 1;
+				break;
+			}
 		}
-		return 0;
+		return i;
 	}
 
 	private void addToContacts(ArrayList<String> contactString) {
 
-		String[] stringArray;
+		System.out.println(contactString);
+		
+		String[] sA;
 
-		Contact c = new Contact(contactString.get(0).split(" ")[1], contactString.get(1).split(" ")[1]);
+		String name = "";
+		String family = "";
+
+		sA = contactString.get(0).split(" ");
+
+		if (sA.length > 1)
+			name = sA[1];
+
+		sA = contactString.get(1).split(" ");
+
+		if (sA.length > 1)
+			family = sA[1];
+
+		Contact c = new Contact(name, family);
 
 		if (contactString.size() > 2) {
 			for (int i = 2; i < contactString.size(); i++) {
-				stringArray = contactString.get(i).split(" ");
+				sA = contactString.get(i).split(" ");
 
-				if (stringArray[0].equals("number")) {
-					c.addToNumbers(new Number(stringArray[1], stringArray[2]));
+				if (sA[0].equals("number")) {
+					c.addToNumbers(new Number(sA[1], sA[2]));
 				}
-				if (stringArray[0].equals("mail")) {
-					c.addToMails(new Mail(stringArray[1], stringArray[2]));
+				if (sA[0].equals("mail")) {
+					c.addToMails(new Mail(sA[1], sA[2]));
 				}
-				if (stringArray[0].equals("data")) {
+				if (sA[0].equals("data")) {
 					String data = "";
-					for (int j = 2; j < stringArray.length; j++) {
-						data += stringArray[j];
-						if (j != stringArray.length - 1)
+					for (int j = 2; j < sA.length; j++) {
+						data += sA[j];
+						if (j != sA.length - 1)
 							data += " ";
 					}
-					c.addToOthers(new OtherData(stringArray[1], data));
+					c.addToOthers(new OtherData(sA[1], data));
 				}
 			}
 		}
-		
 		addToContact(c);
 	}
-	
+
 }
