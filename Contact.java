@@ -48,8 +48,8 @@ public class Contact {
 		mails.add(mail);
 	}
 	
-	void addToFields(Number field) {
-		numbers.add(field);
+	void addToNumbers(Number number) {
+		numbers.add(number);
 	}
 	
 	public ArrayList<OtherData> getOthers() {
