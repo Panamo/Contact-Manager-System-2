@@ -2,7 +2,7 @@ package contactList;
 
 public class MainClass {
 
-	private String lable;
+	private String label;
 
 	private String string;
 
@@ -14,11 +14,11 @@ public class MainClass {
 		this.string = string;
 	}
 	
-	public String getLable() {
-		return lable;
+	public String getLabel() {
+		return label;
 	}
 	
-	void setLable(String lable) {
-		this.lable = lable;
+	void setlabel(String Label) {
+		this.label = label;
 	}
 }

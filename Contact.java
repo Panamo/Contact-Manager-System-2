@@ -7,8 +7,9 @@ public class Contact {
 	String name;
 	String family;
 	
-	ArrayList<Field> fields;
+	ArrayList<Field> numbers;
 	ArrayList<Mail> mails;
+	ArrayList<OtherData> others;
 	
 	public Contact() {
 		name = "";
@@ -16,6 +17,7 @@ public class Contact {
 		
 		fields = new ArrayList<>();
 		mails = new ArrayList<>();
+		others = new ArrayList<>()
 	}
 	
 	void setName(String name) {
@@ -48,5 +50,13 @@ public class Contact {
 	
 	void addToFields(Field field) {
 		fields.add(field);
+	}
+	
+	public ArrayList<OtherData> getOthers() {
+		return others;
+	}
+	
+	void addToOthers(OtherData other) {
+		others.add(other);
 	}
 }
