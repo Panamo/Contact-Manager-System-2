@@ -104,6 +104,8 @@ public class Contact {
 		} catch (IOException e) {
 			System.out.println("Unable to write on file:" + file.toString());
 		}
+		
+		ContactList.contact.add(this);
 	}
 
 }
