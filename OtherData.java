@@ -6,4 +6,9 @@ public class OtherData extends MainClass{
 		setLabel("");
 		setString("");
 	}
+	
+	public OtherData(String label, String data) {
+		setLabel(label);
+		setString(data);
+	}
 }
