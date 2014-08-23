@@ -6,4 +6,9 @@ public class Number extends MainClass{
 		setLabel("");
 		setString("");
 	}
+	
+	public Number(String label, String number) {
+		setLabel(label);
+		setString(number);
+	}
 }
