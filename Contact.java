@@ -20,6 +20,16 @@ public class Contact {
 		others = new ArrayList<>();
 	}
 	
+	public Contact(String name, String family) {
+		
+		this.name = name;
+		this.family = family;
+		
+		numbers = new ArrayList<>();
+		mails = new ArrayList<>();
+		others = new ArrayList<>();
+	}
+	
 	void setName(String name) {
 		this.name = name;
 	}
