@@ -12,6 +12,8 @@ public class Contact {
 	ArrayList<Number> numbers;
 	ArrayList<Mail> mails;
 	ArrayList<OtherData> others;
+	
+
 
 	public Contact() {
 		name = "";
@@ -72,40 +74,6 @@ public class Contact {
 		others.add(other);
 	}
 	
-	public void write() {
-		File file = new File("Contact.txt");
-		FileWriter fw;
 
-		try {
-			fw = new FileWriter(file, true);
-
-			fw.write("{\n");
-			fw.write("name " + this.name);
-			fw.write("\nfamily " + this.family);
-
-			for (int i = 0; i < this.numbers.size(); i++) {
-				fw.write("\nnumber " + this.numbers.get(i).getLabel() + " "
-						+ this.numbers.get(i).getString());
-			}
-			
-			for (int i = 0;i < this.mails.size() ; i++){
-				fw.write("\nmail " + this.mails.get(i).getLabel() + " "
-						+ this.mails.get(i).getString());
-			}
-			
-			for (int i = 0;i < this.others.size() ; i++){
-				fw.write("\ndata " + this.others.get(i).getLabel() + " "
-						+ this.others.get(i).getString());
-			}
-			
-			fw.write("\n}\n");
-			
-			fw.close();
-		} catch (IOException e) {
-			System.out.println("Unable to write on file:" + file.toString());
-		}
-		
-		ContactList.contact.add(this);
-	}
 
 }

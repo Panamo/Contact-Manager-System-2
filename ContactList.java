@@ -2,6 +2,8 @@ package contactList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,9 +37,9 @@ public class ContactList {
 				lineStringArr.add(read.nextLine());
 			for (int i = 0; i < lineStringArr.size(); i++) {
 				if (lineStringArr.get(i).equals("{")) {
-					//System.out.println(i);
+					System.out.println(i);
 					i = setContactLines(i);
-					//System.out.println(i);
+					System.out.println(i);
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -63,8 +65,8 @@ public class ContactList {
 
 	private void addToContacts(ArrayList<String> contactString) {
 
-		//System.out.println(contactString);
-		
+		System.out.println(contactString);
+
 		String[] sA;
 
 		String name = "";
@@ -104,6 +106,43 @@ public class ContactList {
 			}
 		}
 		addToContact(c);
+	}
+
+	public void listWriter() {
+		File file = new File("Contact.txt");
+		FileWriter fw;
+		for (int i = 0; i < contact.size(); i++) {
+			try {
+				fw = new FileWriter(file, false);
+
+				fw.write("{\n");
+				fw.write("name " + contact.get(i).name);
+				fw.write("\nfamily " + contact.get(i).family);
+
+				for (int j = 0; j < contact.get(i).numbers.size(); j++) {
+					fw.write("\nnumber "
+							+ contact.get(i).numbers.get(j).getLabel() + " "
+							+ contact.get(i).numbers.get(j).getString());
+				}
+
+				for (int j = 0; j < contact.get(i).mails.size(); j++) {
+					fw.write("\nmail " + contact.get(i).mails.get(j).getLabel()
+							+ " " + contact.get(i).mails.get(j).getString());
+				}
+
+				for (int j = 0; j < contact.get(i).others.size(); j++) {
+					fw.write("\ndata "
+							+ contact.get(i).others.get(j).getLabel() + " "
+							+ contact.get(i).others.get(j).getString());
+				}
+
+				fw.write("\n}\n");
+
+				fw.close();
+			} catch (IOException e) {
+				System.out.println("Unable to write on file:" + file.toString());
+			}
+		}
 	}
 
 }
