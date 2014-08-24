@@ -1,13 +1,9 @@
-{
-name navid
-family  // mitoone khali bashe
-number home 02122334455
-number mobile 09123456789
-mail work asghar@yahoo.com
-data note in ye mesale va kheili ham aliiii! // baraye dataha String ro mindazim to ye khat bade label
-}
-{
-name 
-family 
-mail home mamad@gmail.com
-}
+karhaii ke bayad bokonim:
+
+1. write ro doros konim
+2. sort benevisim
+3. rabete karbari doros konim
+4. search
+
+1,3 mohammad
+2,4 navid
