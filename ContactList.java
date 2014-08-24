@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ContactList {
 
-	ArrayList<Contact> contact;
+	static ArrayList<Contact> contact;
 	File file;
 	ArrayList<String> lineStringArr;
 
@@ -35,9 +35,9 @@ public class ContactList {
 				lineStringArr.add(read.nextLine());
 			for (int i = 0; i < lineStringArr.size(); i++) {
 				if (lineStringArr.get(i).equals("{")) {
-					System.out.println(i);
+					//System.out.println(i);
 					i = setContactLines(i);
-					System.out.println(i);
+					//System.out.println(i);
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -63,7 +63,7 @@ public class ContactList {
 
 	private void addToContacts(ArrayList<String> contactString) {
 
-		System.out.println(contactString);
+		//System.out.println(contactString);
 		
 		String[] sA;
 

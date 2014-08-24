@@ -1,4 +1,4 @@
-package ContactList;
+package contactList;
 
 import java.io.File;
 import java.io.FileWriter;
