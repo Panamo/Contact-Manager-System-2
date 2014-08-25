@@ -104,6 +104,6 @@ public class Contact implements Comparable<Contact> {
 
 	@Override
 	public int compareTo(Contact o) {
-		return preview.compareTo(o.getPreview());
+		return preview.compareToIgnoreCase(o.getPreview());
 	}
 }
