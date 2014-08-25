@@ -37,14 +37,15 @@ public class ContactList {
 				lineStringArr.add(read.nextLine());
 			for (int i = 0; i < lineStringArr.size(); i++) {
 				if (lineStringArr.get(i).equals("{")) {
-					System.out.println(i);
+					//System.out.println(i);
 					i = setContactLines(i);
-					System.out.println(i);
+					//System.out.println(i);
 				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		genPreview();
 	}
 
 	private int setContactLines(int n) {
@@ -65,7 +66,7 @@ public class ContactList {
 
 	private void addToContacts(ArrayList<String> contactString) {
 
-		System.out.println(contactString);
+		//System.out.println(contactString);
 
 		String[] sA;
 
@@ -141,6 +142,20 @@ public class ContactList {
 				fw.close();
 			} catch (IOException e) {
 				System.out.println("Unable to write on file:" + file.toString());
+			}
+		}
+	}
+	
+	static void genPreview(){
+		for (int i = 0; i < contact.size(); i++){
+			contact.get(i).setPreview(contact.get(i).name + " " + contact.get(i).family);
+			if (contact.get(i).getPreview().charAt(0) == ' ')
+				contact.get(i).setPreview(contact.get(i).family);
+			if (contact.get(i).getPreview().equals("") || contact.get(i).getPreview().equals(" ")){
+				if (contact.get(i).numbers.size() != 0)
+					contact.get(i).setPreview(contact.get(i).numbers.get(0).getString());
+				else
+					contact.get(i).setPreview(contact.get(i).mails.get(0).getString());
 			}
 		}
 	}
