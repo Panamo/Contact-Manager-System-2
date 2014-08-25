@@ -1,14 +1,12 @@
 package contactList;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+
 import java.util.ArrayList;
 
 public class Contact {
 	String name;
 	String family;
-
+	private String preview;
 	ArrayList<Number> numbers;
 	ArrayList<Mail> mails;
 	ArrayList<OtherData> others;
@@ -74,6 +72,14 @@ public class Contact {
 		others.add(other);
 	}
 	
-
+	void setPreview(String preview){
+		this.preview = preview;
+	}
+	
+	String getPreview(){
+		return this.preview;
+	}
+	
+	
 
 }
