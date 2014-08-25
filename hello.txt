@@ -1,9 +1,36 @@
-karhaii ke bayad bokonim:
+public void listWriter() {
+		File file = new File("Contact.txt");
+		FileWriter fw;
+			try {
+				for (int i = 0; i < contact.size(); i++) {
+				fw = new FileWriter(file, false);
 
-1. write ro doros konim
-2. sort benevisim
-3. rabete karbari doros konim
-4. search
+				fw.write("{\n");
+				fw.write("name " + contact.get(i).name);
+				fw.write("\nfamily " + contact.get(i).family);
 
-1,3 mohammad
-2,4 navid
+				for (int j = 0; j < contact.get(i).numbers.size(); j++) {
+					fw.write("\nnumber "
+							+ contact.get(i).numbers.get(j).getLabel() + " "
+							+ contact.get(i).numbers.get(j).getString());
+				}
+
+				for (int j = 0; j < contact.get(i).mails.size(); j++) {
+					fw.write("\nmail " + contact.get(i).mails.get(j).getLabel()
+							+ " " + contact.get(i).mails.get(j).getString());
+				}
+
+				for (int j = 0; j < contact.get(i).others.size(); j++) {
+					fw.write("\ndata "
+							+ contact.get(i).others.get(j).getLabel() + " "
+							+ contact.get(i).others.get(j).getString());
+				}
+
+				fw.write("\n}\n");
+
+				fw.close();
+			}
+			} catch (IOException e) {
+				System.out.println("Unable to write on file:" + file.toString());
+			}
+	}
