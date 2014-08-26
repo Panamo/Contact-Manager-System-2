@@ -159,4 +159,13 @@ public class ContactList {
 		Collections.sort(contacts);
 	}
 
+	ArrayList<Contact> search(String search) {
+		ArrayList<Contact> searched = new ArrayList<>();
+		
+		for (int i = 0; i < contacts.size(); i++)
+			if (contacts.get(i).isSearched(search))
+				searched.add(contacts.get(i));
+		
+		return searched;
+	}
 }
