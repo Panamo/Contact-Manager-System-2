@@ -101,6 +101,22 @@ public class Contact implements Comparable<Contact> {
 	String getPreview() {
 		return this.preview;
 	}
+	
+	boolean isSearched(String search) {
+		
+		if (name.contains(search) || family.contains(search))
+			return true;
+		for (int i = 0; i < numbers.size(); i++)
+			if (numbers.get(i).getString().contains(search))
+				return true;
+		for (int i = 0; i < mails.size(); i++)
+			if (mails.get(i).getString().contains(search))
+				return true;
+		for (int i = 0; i < others.size(); i++)
+			if (others.get(i).getString().contains(search))
+				return true;
+		return false;
+	}
 
 	@Override
 	public int compareTo(Contact o) {
