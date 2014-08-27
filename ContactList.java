@@ -18,37 +18,104 @@ public class ContactList {
 	public ContactList() {
 		contacts = new ArrayList<>();
 		file = new File("Contact.txt");
+
+		read();
+		sort();
 	}
 
+	Thread tReader = new Thread(new Runnable() {
+
+		@Override
+		public void run() {
+
+			try {
+				RandomAccessFile fi = new RandomAccessFile(file, "r");
+				Scanner read = new Scanner(file);
+				lineStringArr = new ArrayList<>();
+				while (read.hasNext())
+					lineStringArr.add(read.nextLine());
+				for (int i = 0; i < lineStringArr.size(); i++) {
+					if (lineStringArr.get(i).equals("{")) {
+						i = setContactLines(i);
+					}
+				}
+				fi.close();
+				read.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			genPreview();
+		}
+	});
+
+	Thread tWriter = new Thread(new Runnable() {
+
+		@Override
+		public void run() {
+
+			FileWriter fw;
+
+			try {
+				fw = new FileWriter(file, false);
+
+				for (int i = 0; i < contacts.size(); i++) {
+
+					fw.write("{\n");
+					fw.write("name " + contacts.get(i).getName());
+					fw.write("\nfamily " + contacts.get(i).getFamily());
+
+					for (int j = 0; j < contacts.get(i).getNumbers().size(); j++) {
+						fw.write("\nnumber "
+								+ contacts.get(i).getNumbers().get(j)
+										.getLabel()
+								+ " "
+								+ contacts.get(i).getNumbers().get(j)
+										.getString());
+					}
+
+					for (int j = 0; j < contacts.get(i).getMails().size(); j++) {
+						fw.write("\nmail "
+								+ contacts.get(i).getMails().get(j).getLabel()
+								+ " "
+								+ contacts.get(i).getMails().get(j).getString());
+					}
+
+					for (int j = 0; j < contacts.get(i).getOthers().size(); j++) {
+						fw.write("\ndata "
+								+ contacts.get(i).getOthers().get(j).getLabel()
+								+ " "
+								+ contacts.get(i).getOthers().get(j)
+										.getString());
+					}
+
+					fw.write("\n}\n");
+				}
+
+				fw.close();
+			} catch (IOException e) {
+				System.out.println("Unable to write on file:" + file.toString());
+			}
+		}
+	});
+
+	void read() {
+
+		tReader.start();
+	}
+	
+	public void write() {
+
+		tWriter.start();
+	}
+	
 	public ArrayList<Contact> getContact() {
 		return contacts;
 	}
 
 	void addToContacts(Contact contact) {
 		contacts.add(contact);
-	}
-
-	void reader() {
-
-		try {
-			RandomAccessFile fi = new RandomAccessFile(file, "r");
-			Scanner read = new Scanner(file);
-			lineStringArr = new ArrayList<>();
-			while (read.hasNext())
-				lineStringArr.add(read.nextLine());
-			for (int i = 0; i < lineStringArr.size(); i++) {
-				if (lineStringArr.get(i).equals("{")) {
-					i = setContactLines(i);
-				}
-			}
-			fi.close();
-			read.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		genPreview();
 	}
 
 	private int setContactLines(int n) {
@@ -110,62 +177,23 @@ public class ContactList {
 		addToContacts(c);
 	}
 
-	public void writer() {
-		File file = new File("Contact.txt");
-		FileWriter fw;
-
-		try {
-			fw = new FileWriter(file, false);
-
-			for (int i = 0; i < contacts.size(); i++) {
-
-				fw.write("{\n");
-				fw.write("name " + contacts.get(i).getName());
-				fw.write("\nfamily " + contacts.get(i).getFamily());
-
-				for (int j = 0; j < contacts.get(i).getNumbers().size(); j++) {
-					fw.write("\nnumber "
-							+ contacts.get(i).getNumbers().get(j).getLabel() + " "
-							+ contacts.get(i).getNumbers().get(j).getString());
-				}
-
-				for (int j = 0; j < contacts.get(i).getMails().size(); j++) {
-					fw.write("\nmail " + contacts.get(i).getMails().get(j).getLabel()
-							+ " " + contacts.get(i).getMails().get(j).getString());
-				}
-
-				for (int j = 0; j < contacts.get(i).getOthers().size(); j++) {
-					fw.write("\ndata "
-							+ contacts.get(i).getOthers().get(j).getLabel() + " "
-							+ contacts.get(i).getOthers().get(j).getString());
-				}
-
-				fw.write("\n}\n");
-			}
-
-			fw.close();
-		} catch (IOException e) {
-			System.out.println("Unable to write on file:" + file.toString());
-		}
-	}
-
 	void genPreview() {
 		for (int i = 0; i < contacts.size(); i++) {
 			contacts.get(i).setPreview();
 		}
 	}
-	
+
 	void sort() {
 		Collections.sort(contacts);
 	}
 
 	ArrayList<Contact> search(String search) {
 		ArrayList<Contact> searched = new ArrayList<>();
-		
+
 		for (int i = 0; i < contacts.size(); i++)
 			if (contacts.get(i).isSearched(search))
 				searched.add(contacts.get(i));
-		
+
 		return searched;
 	}
 }
