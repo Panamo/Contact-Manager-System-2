@@ -45,7 +45,7 @@ public class ShowContactFrame extends JFrame {
 		contentPane.add(lblName);
 		
 		JLabel lblname = new JLabel("(name)");
-		lblname.setBounds(48, 11, 95, 37);
+		lblname.setBounds(64, 11, 95, 37);
 		contentPane.add(lblname);
 		
 		JLabel lblFamily = new JLabel("Family:");
@@ -53,7 +53,7 @@ public class ShowContactFrame extends JFrame {
 		contentPane.add(lblFamily);
 		
 		JLabel lblfamily = new JLabel("(family)");
-		lblfamily.setBounds(243, 11, 95, 37);
+		lblfamily.setBounds(251, 11, 95, 37);
 		contentPane.add(lblfamily);
 		
 		ContactList contactList = new ContactList();
@@ -76,7 +76,7 @@ public class ShowContactFrame extends JFrame {
 		contentPane.add(lblName);
 		
 		JLabel lblname = new JLabel("(name)");
-		lblname.setBounds(48, 11, 95, 37);
+		lblname.setBounds(64, 11, 95, 37);
 		contentPane.add(lblname);
 		
 		JLabel lblFamily = new JLabel("Family:");
@@ -84,7 +84,7 @@ public class ShowContactFrame extends JFrame {
 		contentPane.add(lblFamily);
 		
 		JLabel lblfamily = new JLabel("(family)");
-		lblfamily.setBounds(243, 11, 95, 37);
+		lblfamily.setBounds(251, 11, 95, 37);
 		contentPane.add(lblfamily);
 	}
 }

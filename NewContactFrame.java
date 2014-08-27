@@ -69,20 +69,20 @@ public class NewContactFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("First name:");
-		lblNewLabel.setBounds(10, 11, 58, 32);
+		lblNewLabel.setBounds(10, 11, 67, 32);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(78, 17, 86, 20);
+		textField.setBounds(88, 17, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		lblNewLabel_1 = new JLabel("Family:");
-		lblNewLabel_1.setBounds(174, 11, 58, 32);
+		lblNewLabel_1.setBounds(184, 11, 58, 32);
 		contentPane.add(lblNewLabel_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(223, 17, 86, 20);
+		textField_1.setBounds(252, 17, 86, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -167,7 +167,7 @@ public class NewContactFrame extends JFrame {
 		txtEmail_2.setColumns(10);
 		
 		lblOtherDatas = new JLabel("Other Datas:");
-		lblOtherDatas.setBounds(10, 191, 76, 38);
+		lblOtherDatas.setBounds(10, 191, 76, 32);
 		contentPane.add(lblOtherDatas);
 		
 		txtLabel_6 = new JTextField();

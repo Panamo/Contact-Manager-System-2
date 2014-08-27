@@ -3,7 +3,7 @@ package contactList;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Label;
-
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
 		textField.setBounds(61, 12, 270, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		ContactList contactList = new ContactList();
 		contactList.reader();
 		contactList.sort();
@@ -82,6 +82,7 @@ public class MainFrame extends JFrame {
 		for(int i = 0; i < contactList.getContact().size(); i++){
 			listData.add(contactList.getContact().get(i).getPreview());
 		}
+		
 		
 		JList list = new JList(listData);
 		list.setBounds(61, 38, 270, 312);
@@ -93,7 +94,11 @@ public class MainFrame extends JFrame {
 				String text = textField.getText();
 				if (!text .equals("")){
 					listData.clear();
-					listData.addElement(text);
+					ArrayList<Contact> searchResult = contactList.search(text);
+					for (int i = 0; i<searchResult.size(); i++){
+						listData.add(searchResult.get(i).getPreview());
+					}
+					
 					list.setListData(listData);
 					contentPane.revalidate();
 					contentPane.repaint();
