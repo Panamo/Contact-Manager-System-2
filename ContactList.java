@@ -20,7 +20,6 @@ public class ContactList {
 		file = new File("Contact.txt");
 
 		read();
-		sort();
 	}
 
 	Thread tReader = new Thread(new Runnable() {
@@ -47,6 +46,8 @@ public class ContactList {
 				e.printStackTrace();
 			}
 			genPreview();
+			
+			sort();
 		}
 	});
 
