@@ -75,6 +75,8 @@ public class MainFrame extends JFrame {
 		textField.setColumns(10);
 
 		ContactList contactList = new ContactList();
+		contactList.reader();
+		contactList.sort();
 		
 		Vector listData = new Vector();
 		for(int i = 0; i < contactList.getContact().size(); i++){

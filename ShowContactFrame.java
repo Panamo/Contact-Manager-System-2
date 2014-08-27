@@ -57,6 +57,8 @@ public class ShowContactFrame extends JFrame {
 		contentPane.add(lblfamily);
 		
 		ContactList contactList = new ContactList();
+		contactList.reader();
+		contactList.sort();
 		
 		lblname.setText(contactList.getContact().get(i).getName());
 		lblfamily.setText(contactList.getContact().get(i).getFamily());
