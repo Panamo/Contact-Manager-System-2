@@ -18,6 +18,8 @@ public class ContactList {
 	public ContactList() {
 		contacts = new ArrayList<>();
 		file = new File("Contact.txt");
+		
+		read();
 	}
 
 	public ArrayList<Contact> getContact() {
@@ -28,7 +30,7 @@ public class ContactList {
 		contacts.add(contact);
 	}
 
-	void reader() {
+	void read() {
 
 		try {
 			RandomAccessFile fi = new RandomAccessFile(file, "r");
@@ -49,6 +51,8 @@ public class ContactList {
 			e.printStackTrace();
 		}
 		genPreview();
+		
+		sort();
 	}
 
 	private int setContactLines(int n) {
@@ -110,7 +114,7 @@ public class ContactList {
 		addToContacts(c);
 	}
 
-	public void writer() {
+	public void write() {
 		File file = new File("Contact.txt");
 		FileWriter fw;
 
