@@ -1,6 +1,6 @@
-package home.parham.cms;
+package home.parham.cms.domain.info;
 
-public class MainClass {
+public abstract class Info {
 
 	private String label;
 
@@ -10,15 +10,15 @@ public class MainClass {
 		return string;
 	}
 
-	void setString(String string) {
+	public void setString(String string) {
 		this.string = string;
 	}
-	
+
 	public String getLabel() {
 		return label;
 	}
-	
-	void setlabel(String Label) {
+
+	public void setLabel(String label) {
 		this.label = label;
 	}
 }

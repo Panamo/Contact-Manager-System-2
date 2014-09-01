@@ -1,8 +1,16 @@
-package home.parham.cms;
+package home.parham.cms.domain;
 
+import home.parham.cms.domain.info.Mail;
+import home.parham.cms.domain.info.Number;
+import home.parham.cms.domain.info.OtherData;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Contact implements Comparable<Contact> {
+public class Contact implements Comparable<Contact>, Serializable {
+
+	private static final long serialVersionUID = -4305861548474119088L;
+
 	private String name;
 	private String family;
 	private String preview;
@@ -55,11 +63,11 @@ public class Contact implements Comparable<Contact> {
 		return mails;
 	}
 
-	void addToMails(Mail mail) {
+	public void addToMails(Mail mail) {
 		mails.add(mail);
 	}
 
-	void addToNumbers(Number number) {
+	public void addToNumbers(Number number) {
 		numbers.add(number);
 	}
 
@@ -67,11 +75,11 @@ public class Contact implements Comparable<Contact> {
 		return others;
 	}
 
-	void addToOthers(OtherData other) {
+	public void addToOthers(OtherData other) {
 		others.add(other);
 	}
 
-	void setPreview() {
+	public void setPreview() {
 
 		if (!name.equals("")) {
 			preview = name;
@@ -86,7 +94,7 @@ public class Contact implements Comparable<Contact> {
 
 		if (preview.equals("")) {
 			if (numbers.size() != 0)
-				preview = numbers.get(0).getString();
+				preview = numbers.get(0).toString();
 			else {
 				if (mails.size() != 0)
 					preview = mails.get(0).getString();
@@ -98,16 +106,16 @@ public class Contact implements Comparable<Contact> {
 		}
 	}
 
-	String getPreview() {
+	public String getPreview() {
 		return this.preview;
 	}
-	
-	boolean isSearched(String search) {
-		
+
+	public boolean isSearched(String search) {
+
 		if (name.contains(search) || family.contains(search))
 			return true;
 		for (int i = 0; i < numbers.size(); i++)
-			if (numbers.get(i).getString().contains(search))
+			if (numbers.get(i).toString().contains(search))
 				return true;
 		for (int i = 0; i < mails.size(); i++)
 			if (mails.get(i).getString().contains(search))
@@ -119,7 +127,7 @@ public class Contact implements Comparable<Contact> {
 	}
 
 	@Override
-	public int compareTo(Contact o) {
-		return preview.compareToIgnoreCase(o.getPreview());
+	public int compareTo(Contact object) {
+		return preview.compareToIgnoreCase(object.getPreview());
 	}
 }
