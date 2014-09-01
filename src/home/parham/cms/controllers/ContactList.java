@@ -10,7 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -115,11 +114,7 @@ public class ContactList implements List<Contact> {
 		}
 	}
 
-	void sort() {
-		Collections.sort(contacts);
-	}
-
-	ArrayList<Contact> search(String search) {
+	public ArrayList<Contact> search(String search) {
 		ArrayList<Contact> searched = new ArrayList<>();
 
 		for (int i = 0; i < contacts.size(); i++)
