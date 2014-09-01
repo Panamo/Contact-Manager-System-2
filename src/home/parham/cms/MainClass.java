@@ -1,4 +1,4 @@
-package contactList;
+package home.parham.cms;
 
 public class MainClass {
 

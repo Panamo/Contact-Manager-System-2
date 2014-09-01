@@ -1,4 +1,4 @@
-package contactList;
+package home.parham.cms;
 
 public class OtherData extends MainClass{
 
