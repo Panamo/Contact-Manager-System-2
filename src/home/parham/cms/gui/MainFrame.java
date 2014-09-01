@@ -1,13 +1,9 @@
 package home.parham.cms.gui;
 
-import home.parham.cms.controllers.ContactList;
-import home.parham.cms.domain.Contact;
-
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -49,59 +45,13 @@ public class MainFrame extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 
-		final ContactList contactList = new ContactList();
-
 		final Vector<String> listData = new Vector<>();
-		for (int i = 0; i < contactList.size(); i++) {
-			listData.add(contactList.get(i).getPreview());
-		}
 
 		final JList<String> list = new JList<>(listData);
 		list.setBounds(61, 38, 270, 312);
 		contentPane.add(list);
 
-		JButton btnNewButton_1 = new JButton("Search");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String text = textField.getText();
-				if (!text.equals("")) {
-					listData.clear();
-					ArrayList<Contact> searchResult = contactList.search(text);
-					for (int i = 0; i < searchResult.size(); i++) {
-						listData.add(searchResult.get(i).getPreview());
-					}
-
-					list.setListData(listData);
-					contentPane.revalidate();
-					contentPane.repaint();
-				} else {
-					listData.clear();
-					for (int i = 0; i < contactList.size(); i++) {
-						listData.add(contactList.get(i).getPreview());
-					}
-					list.setListData(listData);
-					contentPane.revalidate();
-					contentPane.repaint();
-				}
-
-			}
-		});
-		btnNewButton_1.setBounds(341, 11, 89, 23);
-		contentPane.add(btnNewButton_1);
-
 		JButton btnShow = new JButton("Show");
-		btnShow.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String preview = (String) listData.get(list.getSelectedIndex());
-				for (int i = 0; i < contactList.size(); i++) {
-					if (contactList.get(i).getPreview().equals(preview)) {
-						ShowContactFrame show = new ShowContactFrame(i);
-						show.setVisible(true);
-						break;
-					}
-				}
-			}
-		});
 		btnShow.setBounds(341, 63, 89, 23);
 		contentPane.add(btnShow);
 
