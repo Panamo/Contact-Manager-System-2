@@ -1,23 +1,23 @@
-package home.parham.cms.system;
+package home.parham.cms.conf;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.FileConfiguration;
 import org.apache.commons.configuration.XMLConfiguration;
 
-public class FileHandler {
+public class ConfigurationHandler {
 
-	private static FileHandler instance;
+	private static ConfigurationHandler instance;
 
 	private XMLConfiguration configuration;
 
-	public static FileHandler getInstance() {
+	public static ConfigurationHandler getInstance() {
 		if (instance == null) {
-			instance = new FileHandler();
+			instance = new ConfigurationHandler();
 		}
 		return instance;
 	}
 
-	private FileHandler() {
+	private ConfigurationHandler() {
 		try {
 			configuration = new XMLConfiguration("conf.xml");
 		} catch (ConfigurationException e) {

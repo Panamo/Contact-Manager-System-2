@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Requests Verbs">
+	<intro>
+		<description>
+			<b>
+				In this cheetsheet you see simple definition of verbs you may see in Contact-Manager-System protocol 
+			</b>
+    	</description>
+   </intro>
+      <item title="Create">
+     	<description>
+        	 <b>CREATE keyword use for create contact</b>
+      	</description>
+   </item>
+   <item title="Modify">
+      	<description>
+         	<b>MODIFY keyword use for modify contact</b>
+      	</description>
+   </item>
+   <item title="Delete">
+      	<description>
+         	<b>DELETE key word use for delete contact</b>
+      	</description>
+   	</item>
+</cheatsheet>

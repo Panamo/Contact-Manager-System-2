@@ -1,12 +1,13 @@
 package home.parham.cms.dao;
 
-import home.parham.cms.system.FileHandler;
+import home.parham.cms.conf.ConfigurationHandler;
 
 public class ContactDaoFactory {
 
 	public static ContactDao getInstance() {
-		String contactDaoClass = FileHandler.getInstance().getConfiguration()
-				.getString("ContactDaoClass");
+		String contactDaoClass = ConfigurationHandler.getInstance()
+				.getConfiguration()
+				.getString("ContactDAO-difinition.ContactDaoClass");
 		if (contactDaoClass == null) {
 			return new JsonContactDao();
 		}

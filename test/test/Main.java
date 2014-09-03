@@ -1,11 +1,9 @@
 package test;
 
-import home.parham.cms.controllers.ContactController;
-import home.parham.cms.gui.MainFrame;
+import home.parham.cms.net.Dispatcher;
 
 public class Main {
 	public static void main(String[] args) {
-		new MainFrame().setVisible(true);
-		ContactController.getInstace().load("contacts.txt");
+		new Dispatcher().start();
 	}
 }

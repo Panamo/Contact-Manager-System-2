@@ -1,1 +1,11 @@
-<ContactDaoClass>home.parham.cms.dao.JsonContactDao</ContactDaoClass>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<config>
+	<ContactDAO-difinition>
+		<ContactDaoClass>home.parham.cms.dao.JsonContactDao</ContactDaoClass>
+		<ContactDaoPath>contacts.xml</ContactDaoPath>
+	</ContactDAO-difinition>
+	<net-difinition>
+		<RequestClass>home.parham.cms.net.request.EchoRequest</RequestClass>
+		<HandlerClass>home.parham.cms.net.handler.EchoHandler</HandlerClass>
+	</net-difinition>
+</config>
