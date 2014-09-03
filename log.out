@@ -152,3 +152,7 @@ java.io.FileNotFoundException: contacts.json (No such file or directory)
 2014-09-03 13:27:58 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
 2014-09-03 13:27:58 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
 2014-09-03 13:27:58 DEBUG ContactController:41 - contacts update.
+2014-09-03 13:52:08 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:52:08 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:52:08 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:52:08 DEBUG ContactController:41 - contacts update.
