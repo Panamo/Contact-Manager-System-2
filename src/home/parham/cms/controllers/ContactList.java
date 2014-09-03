@@ -1,9 +1,6 @@
 package home.parham.cms.controllers;
 
 import home.parham.cms.domain.Contact;
-import home.parham.cms.domain.info.Mail;
-import home.parham.cms.domain.info.Number;
-import home.parham.cms.domain.info.OtherData;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,10 +1,7 @@
 package home.parham.cms.domain.info;
 
-public abstract class Info {
-
-	private String label;
-
-	private String string;
+public interface Info {
+	String getType();
 
 	String getLabel();
 
