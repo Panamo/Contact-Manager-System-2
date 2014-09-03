@@ -1,6 +1,6 @@
 package home.parham.cms.domain.info;
 
-public class Mail extends Info {
+public class Mail implements Info {
 
 	String value;
 	String label;
