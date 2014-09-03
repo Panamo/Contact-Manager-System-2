@@ -1,14 +1,42 @@
 package home.parham.cms.domain.info;
 
-public class Number extends Info {
+public class Number implements Info {
+
+	String label;
+	String value;
 
 	public Number() {
 		setLabel("");
-		setString("");
+		setValue("");
 	}
 
 	public Number(String label, String number) {
 		setLabel(label);
-		setString(number);
+		setValue(number);
+	}
+
+	@Override
+	public String getType() {
+		return "Number";
+	}
+
+	@Override
+	public String getLabel() {
+		return label;
+	}
+
+	@Override
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	@Override
+	public String getValue() {
+		return value;
+	}
+
+	@Override
+	public void setValue(String value) {
+		this.value = value;
 	}
 }
