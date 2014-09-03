@@ -1,6 +1,8 @@
 package home.parham.cms.domain.info;
 
 public interface Info {
+	String getType();
+
 	String getLabel();
 
 	void setLabel(String label);

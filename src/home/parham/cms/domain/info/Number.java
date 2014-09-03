@@ -16,6 +16,11 @@ public class Number implements Info {
 	}
 
 	@Override
+	public String getType() {
+		return "Number";
+	}
+
+	@Override
 	public String getLabel() {
 		return label;
 	}

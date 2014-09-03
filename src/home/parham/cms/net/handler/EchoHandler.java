@@ -1,16 +1,13 @@
 package home.parham.cms.net.handler;
 
-import home.parham.cms.net.request.EchoRequest;
-import home.parham.cms.net.request.Request;
+import home.parham.cms.net.Request;
 
 import java.io.PrintWriter;
-
-import javax.naming.OperationNotSupportedException;
 
 public class EchoHandler implements Handler {
 
 	private PrintWriter writer;
-	private EchoRequest request;
+	private Request request;
 
 	@Override
 	public void run() {
@@ -19,15 +16,9 @@ public class EchoHandler implements Handler {
 	}
 
 	@Override
-	public void setRequest(Request request, PrintWriter writer)
-			throws OperationNotSupportedException {
+	public void setRequest(Request request, PrintWriter writer) {
 		this.writer = writer;
-		if (request instanceof EchoRequest) {
-			this.request = (EchoRequest) request;
-		} else {
-			throw new OperationNotSupportedException(
-					"Must use EchoRequest with this handler");
-		}
+		this.request = request;
 	}
 
 }

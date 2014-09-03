@@ -16,6 +16,11 @@ public class Mail implements Info {
 	}
 
 	@Override
+	public String getType() {
+		return "Mail";
+	}
+
+	@Override
 	public String getLabel() {
 		return label;
 	}
