@@ -1,22 +1,32 @@
 package home.parham.cms.net.handler;
 
 import home.parham.cms.controllers.ContactController;
-import home.parham.cms.net.request.JsonRequest;
-import home.parham.cms.net.request.Request;
+import home.parham.cms.domain.Contact;
+import home.parham.cms.net.Request;
 
 import java.io.PrintWriter;
 
-import javax.naming.OperationNotSupportedException;
+import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 
 public class JsonHandler implements Handler {
 
-	private JsonRequest request;
+	private Request request;
 	private PrintWriter writer;
-	
+
 	@Override
 	public void run() {
 		if (request.getVerb().equalsIgnoreCase("CREATE")) {
-			ContactController.getInstace().buildContact(request.getContact());
+			Gson gson = new Gson();
+			try {
+				Contact contact = gson.fromJson(request.getRequest().trim(),
+						Contact.class);
+				ContactController.getInstace().buildContact(contact);
+			} catch (JsonParseException exception) {
+				exception.printStackTrace();
+				writer.println("Syntax error : " + exception.getMessage());
+				return;
+			}
 			writer.println("OK");
 		} else if (request.getVerb().equalsIgnoreCase("MODIFY")) {
 
@@ -28,15 +38,10 @@ public class JsonHandler implements Handler {
 	}
 
 	@Override
-	public void setRequest(Request request, PrintWriter writer)
-			throws OperationNotSupportedException {
+	public void setRequest(Request request, PrintWriter writer) {
 		this.writer = writer;
-		if (request instanceof JsonRequest) {
-			this.request = (JsonRequest) request;
-		} else {
-			throw new OperationNotSupportedException(
-					"Must use JsonRequest with this handler");
-		}
+		this.request = request;
+
 	}
 
 }

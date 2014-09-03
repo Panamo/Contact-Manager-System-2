@@ -1,12 +1,11 @@
-package home.parham.cms.net.request;
+package home.parham.cms.net;
 
-public class EchoRequest implements Request {
+public class Request {
 
 	private String verb;
 	private String request;
 
-	@Override
-	public void setRequestString(String verb, String request) {
+	public Request(String verb, String request) {
 		this.verb = verb;
 		this.request = request;
 	}

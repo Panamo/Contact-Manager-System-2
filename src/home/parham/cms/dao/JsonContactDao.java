@@ -2,44 +2,41 @@ package home.parham.cms.dao;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 
 import home.parham.cms.controllers.ContactList;
 
 public class JsonContactDao implements ContactDao {
 
 	@Override
-	public ContactList read(String path) {
+	public ContactList read(String path) throws IOException, DaoException {
 		Gson gson = new Gson();
 		ContactList contacts = null;
+		BufferedReader read = new BufferedReader(new InputStreamReader(
+				new FileInputStream(path)));
+		String contactsString = read.readLine();
+		read.close();
 		try {
-			BufferedReader read = new BufferedReader(new InputStreamReader(
-					new FileInputStream(path)));
-			String contactsString = read.readLine();
 			contacts = gson.fromJson(contactsString, ContactList.class);
-			read.close();
-			return contacts;
-		} catch (IOException exception) {
-			return contacts;
+		} catch (JsonParseException exception) {
+			throw new DaoException(exception);
 		}
+		return contacts;
 	}
 
 	@Override
-	public void write(ContactList contacts, String path) {
+	public void write(ContactList contacts, String path)
+			throws FileNotFoundException {
 		Gson gson = new Gson();
 		String contactsString = gson.toJson(contacts);
-		try {
-			PrintWriter writer = new PrintWriter(path);
-			writer.write(contactsString);
-			writer.close();
-		} catch (IOException exception) {
-			exception.printStackTrace();
-		}
-
+		PrintWriter writer = new PrintWriter(path);
+		writer.write(contactsString);
+		writer.close();
 	}
-
 }

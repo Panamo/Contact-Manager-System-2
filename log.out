@@ -57,3 +57,94 @@ javax.naming.OperationNotSupportedException: Must use JsonRequest with this hand
 2014-09-03 11:26:16 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
 2014-09-03 11:26:16 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
 2014-09-03 11:26:16 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:37:03 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:37:03 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:37:03 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:37:04 ERROR FileHandler:34 - 
+java.io.FileNotFoundException: contacts.xml (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at java.io.FileInputStream.<init>(FileInputStream.java:101)
+	at home.parham.cms.dao.JsonContactDao.read(JsonContactDao.java:22)
+	at home.parham.cms.controllers.ContactController.load(ContactController.java:37)
+	at home.parham.cms.system.FileHandler.loadContactList(FileHandler.java:31)
+	at home.parham.cms.net.Dispatcher.<init>(Dispatcher.java:30)
+	at test.Main.main(Main.java:7)
+2014-09-03 12:38:45 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:38:45 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:38:45 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:38:45 ERROR FileHandler:34 - 
+java.io.FileNotFoundException: contacts.xml (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at java.io.FileInputStream.<init>(FileInputStream.java:101)
+	at home.parham.cms.dao.JsonContactDao.read(JsonContactDao.java:22)
+	at home.parham.cms.controllers.ContactController.load(ContactController.java:37)
+	at home.parham.cms.system.FileHandler.loadContactList(FileHandler.java:31)
+	at home.parham.cms.net.Dispatcher.<init>(Dispatcher.java:30)
+	at test.Main.main(Main.java:7)
+2014-09-03 12:39:21 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:39:21 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:39:21 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:39:21 ERROR FileHandler:34 - 
+java.io.FileNotFoundException: contacts.xml (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at java.io.FileInputStream.<init>(FileInputStream.java:101)
+	at home.parham.cms.dao.JsonContactDao.read(JsonContactDao.java:22)
+	at home.parham.cms.controllers.ContactController.load(ContactController.java:37)
+	at home.parham.cms.system.FileHandler.loadContactList(FileHandler.java:31)
+	at home.parham.cms.net.Dispatcher.<init>(Dispatcher.java:30)
+	at test.Main.main(Main.java:7)
+2014-09-03 12:39:42 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:39:42 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:39:42 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:39:42 DEBUG ContactController:41 - contacts update.
+2014-09-03 12:41:41 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:41:41 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:41:41 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:41:41 ERROR FileHandler:34 - 
+java.io.FileNotFoundException: contacts.json (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at java.io.FileInputStream.<init>(FileInputStream.java:101)
+	at home.parham.cms.dao.JsonContactDao.read(JsonContactDao.java:22)
+	at home.parham.cms.controllers.ContactController.load(ContactController.java:37)
+	at home.parham.cms.system.FileHandler.loadContactList(FileHandler.java:31)
+	at home.parham.cms.net.Dispatcher.<init>(Dispatcher.java:30)
+	at test.Main.main(Main.java:7)
+2014-09-03 12:51:25 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:51:25 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:51:25 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:51:25 DEBUG ContactController:41 - contacts update.
+2014-09-03 12:52:04 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:52:04 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:52:04 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:52:04 DEBUG ContactController:41 - contacts update.
+2014-09-03 12:53:10 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:53:10 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:53:10 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:53:10 DEBUG ContactController:41 - contacts update.
+2014-09-03 12:54:20 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 12:54:20 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 12:54:20 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 12:54:20 DEBUG ContactController:41 - contacts update.
+2014-09-03 13:05:15 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:05:15 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:05:15 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:05:15 DEBUG ContactController:41 - contacts update.
+2014-09-03 13:08:49 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:08:49 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:08:49 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:08:49 DEBUG ContactController:41 - contacts update.
+2014-09-03 13:11:06 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:11:06 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:11:06 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:11:06 DEBUG ContactController:41 - contacts update.
+2014-09-03 13:12:56 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:12:56 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:12:56 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:13:52 DEBUG ConfigurationUtils:449 - ConfigurationUtils.locate(): base is null, name is conf.xml
+2014-09-03 13:13:52 DEBUG DefaultFileSystem:281 - Could not locate file conf.xml at null: no protocol: conf.xml
+2014-09-03 13:13:52 DEBUG ConfigurationUtils:493 - Loading configuration from the path conf.xml
+2014-09-03 13:13:52 DEBUG ContactController:41 - contacts update.

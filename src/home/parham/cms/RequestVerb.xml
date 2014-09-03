@@ -19,7 +19,12 @@
    </item>
    <item title="Delete">
       	<description>
-         	<b>DELETE key word use for delete contact</b>
+         	<b>DELETE key word use for delete contact with UUID</b>
+      	</description>
+   	</item>
+   	<item title="Get">
+      	<description>
+         	<b>GET key word use for get contact with UUID</b>
       	</description>
    	</item>
 </cheatsheet>

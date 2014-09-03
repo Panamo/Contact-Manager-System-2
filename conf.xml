@@ -2,10 +2,9 @@
 <config>
 	<ContactDAO-difinition>
 		<ContactDaoClass>home.parham.cms.dao.JsonContactDao</ContactDaoClass>
-		<ContactDaoPath>contacts.xml</ContactDaoPath>
+		<ContactDaoPath>contacts.json</ContactDaoPath>
 	</ContactDAO-difinition>
 	<net-difinition>
-		<RequestClass>home.parham.cms.net.request.EchoRequest</RequestClass>
-		<HandlerClass>home.parham.cms.net.handler.EchoHandler</HandlerClass>
+		<HandlerClass>home.parham.cms.net.handler.JsonHandler</HandlerClass>
 	</net-difinition>
 </config>
