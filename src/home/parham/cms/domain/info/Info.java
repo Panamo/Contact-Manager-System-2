@@ -6,19 +6,11 @@ public abstract class Info {
 
 	private String string;
 
-	public String getString() {
-		return string;
-	}
+	String getLabel();
 
-	public void setString(String string) {
-		this.string = string;
-	}
+	void setLabel(String label);
 
-	public String getLabel() {
-		return label;
-	}
+	String getValue();
 
-	public void setLabel(String label) {
-		this.label = label;
-	}
+	void setValue(String value);
 }

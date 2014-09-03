@@ -1,58 +1,37 @@
 package home.parham.cms.system;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+
+import home.parham.cms.conf.ConfigurationHandler;
+import home.parham.cms.controllers.ContactController;
+import home.parham.cms.dao.DaoException;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 public class FileHandler {
+	private static Logger logger = Logger.getLogger(FileHandler.class);
 
-	private static FileHandler instance;
-
-	public static FileHandler getInstance() {
-		if (instance == null) {
-			instance = new FileHandler();
-		}
-		return instance;
-	}
-
-	private FileHandler() {
-	}
-
-	public void readContacts(String path) {
+	public static void saveContactList() {
+		String path = ConfigurationHandler.getInstance().getConfiguration()
+				.getString("ContactDAO-difinition.ContactDaoPath");
 		try {
-			BufferedReader read = new BufferedReader(new InputStreamReader(
-					new FileInputStream(path)));
-			ArrayList<String> lineStringArr = new ArrayList<>();
-			String line;
-			while ((line = read.readLine()) != null) {
-				lineStringArr.add(line);
-			}
-			for (int i = 0; i < lineStringArr.size(); i++) {
-				if (lineStringArr.get(i).equals("{")) {
-//					 i = setContactLines(i);
-				}
-			}
-			read.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+			ContactController.getInstace().save(path);
+		} catch (FileNotFoundException | DaoException exception) {
+			exception.printStackTrace();
+			logger.log(Level.ERROR, "", exception);
 		}
 	}
 
-//	private int setContactLines(int n) {
-//		ArrayList<String> contactString = new ArrayList<>();
-//		int i;
-//		for (i = n + 1; i < lineStringArr.size(); i++) {
-//			if (!lineStringArr.get(i).equals("}")) {
-//				contactString.add(lineStringArr.get(i));
-//			}
-//			if (lineStringArr.get(i).equals("}")) {
-//				addContact(contactString);
-//				break;
-//			}
-//		}
-//		return i;
-//	}
-
+	public static void loadContactList() {
+		String path = ConfigurationHandler.getInstance().getConfiguration()
+				.getString("ContactDAO-difinition.ContactDaoPath");
+		try {
+			ContactController.getInstace().load(path);
+		} catch (IOException | DaoException exception) {
+			exception.printStackTrace();
+			logger.log(Level.ERROR, "", exception);
+		}
+	}
 }
