@@ -1,7 +1,5 @@
 package home.parham.cms.domain;
 
-import home.parham.cms.domain.info.Info;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
