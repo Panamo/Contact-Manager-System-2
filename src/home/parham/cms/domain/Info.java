@@ -1,7 +1,7 @@
 package home.parham.cms.domain;
 
 public class Info {
-	private Contact owner;
+	private int id;
 	private String label;
 	private String value;
 	private String type;
@@ -9,12 +9,12 @@ public class Info {
 	public Info() {
 	}
 
-	public Contact getOwner() {
-		return owner;
+	public int getId() {
+		return id;
 	}
 
-	public void setOwner(Contact owner) {
-		this.owner = owner;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getLabel() {

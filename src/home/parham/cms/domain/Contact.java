@@ -41,7 +41,7 @@ public class Contact {
 		return infoes;
 	}
 
-	public void setInfeos(ArrayList<Info> infos) {
+	public void setInfoes(ArrayList<Info> infos) {
 		this.infoes = infos;
 	}
 

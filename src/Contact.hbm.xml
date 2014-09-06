@@ -11,5 +11,18 @@
 		</property>
 		<property name="family">
 		</property>
+		<many-to-one name="infoes" class="home.parham.cms.domain.Info">
+		</many-to-one>
+	</class>
+	<class name="home.parham.cms.domain.Info" table="infoes">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="label">
+		</property>
+		<property name="value">
+		</property>
+		<property name="type">
+		</property>
 	</class>
 </hibernate-mapping>
