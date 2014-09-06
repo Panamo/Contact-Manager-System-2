@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="home.parham.cms.domain.Contact" table="contacts">
+		<id name="id">
+		</id>
+		<property name="name">
+		</property>
+		<property name="family">
+		</property>
+	</class>
+</hibernate-mapping>

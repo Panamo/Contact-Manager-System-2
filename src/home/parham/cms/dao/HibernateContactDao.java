@@ -27,7 +27,7 @@ public class HibernateContactDao implements ContactDao {
 	@Override
 	public ContactList read(String path) throws IOException, DaoException {
 		Session session = factory.openSession();
-		Query query = session.createQuery("from contacts");
+		Query query = session.createQuery("FROM Contact c");
 		ContactList contacts = new ContactList();
 		try {
 			List<?> list = query.list();
