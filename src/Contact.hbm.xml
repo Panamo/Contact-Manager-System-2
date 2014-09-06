@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="home.parham.cms.domain.Contact" table="contacts">
+		<id name="id">
+		</id>
+		<property name="name">
+		</property>
+		<property name="family">
+		</property>
+		<many-to-one name="infoes" class="home.parham.cms.domain.Info">
+		</many-to-one>
+	</class>
+	<class name="home.parham.cms.domain.Info" table="infoes">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="label">
+		</property>
+		<property name="value">
+		</property>
+		<property name="type">
+		</property>
+	</class>
+</hibernate-mapping>
