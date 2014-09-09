@@ -1,5 +1,7 @@
 package home.parham.cms.dao;
 
+import home.parham.cms.controllers.ContactList;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,8 +11,6 @@ import java.io.PrintWriter;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
-
-import home.parham.cms.controllers.ContactList;
 
 public class JsonContactDao implements ContactDao {
 
