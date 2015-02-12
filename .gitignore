@@ -5,6 +5,9 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
+# Project log file
+log.out
+
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
