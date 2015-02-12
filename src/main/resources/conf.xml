@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <config>
-	<ContactDAO-difinition>
-		<ContactDaoClass>home.parham.cms.dao.HibernateContactDao
-		</ContactDaoClass>
-		<ContactDaoPath>contacts.json</ContactDaoPath>
-	</ContactDAO-difinition>
-	<net-difinition>
-		<HandlerClass>home.parham.cms.net.handler.JsonHandler</HandlerClass>
-	</net-difinition>
+    <ContactDAO-difinition>
+        <ContactDaoClass>
+            home.parham.cms.dao.HibernateContactDao
+        </ContactDaoClass>
+        <ContactDaoPath>
+            contacts.json
+        </ContactDaoPath>
+    </ContactDAO-difinition>
+    <net-difinition>
+        <HandlerClass>
+            home.parham.cms.net.handler.JsonHandler
+        </HandlerClass>
+    </net-difinition>
 </config>
